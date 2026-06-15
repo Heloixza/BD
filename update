@@ -1,1 +1,31 @@
+create database BdLoja;
+use BdLoja;
 
+create table clientes (
+id int primary key auto_increment,
+nome varchar (150),
+email varchar (150),
+idade int
+);
+
+INSERT INTO clientes (nome, email, idade) VALUES ('Ana Mendes', 'anamendes16@email.com', 17);
+INSERT INTO clientes (nome, email, idade) VALUES ('Geovanni Ramos', 'georamos@email.com', 27);
+INSERT INTO clientes (nome, email, idade) VALUES ('Bruno Mendes', 'brunomendes22@email.com', 26);
+
+select * from clientes; 
+
+update clientes 
+set idade = 27
+where id = 1;
+
+update clientes 
+set idade = 29,
+email = 'brunomendes2402@gmail.com' 
+where id = 3;
+
+update clientes
+set idade = idade + 1;
+
+update clientes 
+set email = 'alunoescola@gmail.com'
+where idade < 29;
