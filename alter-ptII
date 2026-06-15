@@ -28,3 +28,23 @@ ALTER TABLE estudantes MODIFY email varchar(150) AFTER nome_completo;
 
 ALTER TABLE estudantes DROP INDEX unique_email;
  
+
+
+
+
+
+create database BdLoja;
+use BdLoja;
+
+create table clientes (
+id int primary key auto_increment,
+nome varchar (150),
+email varchar (150),
+idade int
+);
+
+INSERT INTO clientes (nome, email, idade) VALUES ('Ana Mendes', 'anamendes16@email.com', 17);
+INSERT INTO clientes (nome, email, idade) VALUES ('Geovanni Ramos', 'georamos@email.com', 27);
+INSERT INTO clientes (nome, email, idade) VALUES ('Bruno Mendes', 'brunomendes22@email.com', 26);
+
+select * from clientes; 
