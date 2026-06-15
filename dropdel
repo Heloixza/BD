@@ -1,0 +1,32 @@
+create database dropdel;
+use dropdel;
+
+CREATE TABLE funcionarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100),
+    cargo VARCHAR(50),
+    salario DECIMAL(10,2)
+);
+
+insert into funcionarios (nome, cargo, salario) values 
+('Ana', 'Analista', 3500.00),
+('Bruno', 'Técnico', 2800.00),
+('Carlos', 'Analista', 4200.00),
+('Daniela', 'Gerente', 6500.00) ;
+
+
+delete from funcionarios where nome = 'Bruno';
+delete from funcionarios where cargo = 'Analista';
+delete from funcionarios;
+
+drop table funcionarios;
+select * from funcionarios;
+
+/* O código da linha 23 não funcionou, pois acima deletamos a tabela "funcionarios", e com isso a execução falha. */
+
+drop database dropdel;
+use dropdel;
+
+/* drop = drop apaga toda a estrutura
+   del = apaga os dados mantendo a estrutura
+   */
