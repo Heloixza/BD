@@ -1,0 +1,26 @@
+create database indice;
+use indice;
+ 
+create table alunos (
+    id int primary key,
+    nome varchar(100),
+    email varchar(100),
+    cidade varchar(100),
+    idade int
+);
+ 
+create index idx_nome on alunos(nome);
+create index idx_cidade on alunos(cidade);
+create index idx_cidade_idade on alunos(cidade, idade);
+create unique index idx_email on alunos(email);
+
+show index from alunos;
+
+drop index idx_nome on alunos;
+drop index idx_email on alunos;
+
+select * from alunos where cidade = 'São Paulo';
+select * from alunos where cidade = 'São Paulo' and idade = 20;
+
+explain select * from alunos where cidade = 'São Paulo' and idade = 20;
+ 
